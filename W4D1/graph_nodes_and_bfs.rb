@@ -5,19 +5,23 @@ class GraphNode
         self.val = val
         self.neighbors = []
     end
+end
 
-    def bfs(starting_node, target_val, visited=Set.new)
-        # return starting_node if starting_node.val == target_val
-        queue = [starting_node]
 
-        visited.add(starting_node.val)
+def bfs(starting_node, target_val)#, visited = Set.new() )
+    return starting_node if starting_node.val == target_val
+    queue = [starting_node]
 
-        until queue.empty?
-            starting_node = queue.pop
-            return node if node.value == target_value
-            starting_node.neighbors.each {|neighbor| queue.unshift(neighbor)}
-            bfs(starting_node, target_val, visited)
-        end
+    #visited.add(starting_node.val)
+
+    until queue.empty?
+        # starting_node = queue.pop
+        # return node if node.value == target_value
+        # starting_node.neighbors.each {|neighbor| queue.unshift(neighbor)}
+        # bfs(starting_node, target_val, visited)
+        node = queue.pop
+        return node if node.val == target_val
+        node.neighbors.each {|neighbor| queue.unshift(neighbor)}
     end
 end
 
