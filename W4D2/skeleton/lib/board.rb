@@ -13,11 +13,11 @@ class Board
   def place_stones
     # helper method to #initialize every non-store cup with four stones each
     @cups.each_with_index do |cup, i|
-      # if i != 6 || i != 13
-      #   4.times {cup << :stone}
-      # end
-      next if i == 6 || i == 13
-      4.times {cup << :stone}
+      if i != 6 && i != 13
+        4.times {cup << :stone}
+      end
+      # next if i == 6 || i == 13
+      # 4.times {cup << :stone}
     end
   end
 
