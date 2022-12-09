@@ -19,11 +19,11 @@ class Play
     data.map { |datum| Play.new(datum) }
   end
 
-  def find_by_title(title)
-
+  def self.find_by_title(title)
+    Play.title
   end
 
-  def find_by_playwright(name)
+  def self.find_by_playwright(name)
 
   end
 
